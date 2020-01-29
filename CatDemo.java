@@ -1,41 +1,51 @@
 package cat.shelter;
 
+/**
+ * Application demo
+ */
 public class CatDemo {
 
+    /**
+     * Method main() in runtime creates three instances of Cat using Cat.Builder, displays them on console
+     *
+     * @param args - String[] array which can be used as argument for main()
+     * @throws MeowException - thrown if Cat ID, Cat tag code or/and Cat color
+     *                       do not match special criteria {@link CatValidator#CatValidator}
+     */
     public static void main(String[] args) throws MeowException {
 
         Cat c1 = new Cat.Builder()
-                .setbId(20012900)
-                .setbTagCode("TKY2007C02275")
-                .setbBreed("Scottish Fold (Straight)")
-                .setbColor("Tabby/White")
-                .setbName("MARU")
-                .setbAge(12)
-                .setbHealthIssues("health check on Feb 5")
-                .setbIsAdoptionReady(false)
-                .setbHasNewOwner(false)
+                .setId(20012900)
+                .setTagCode("TKY2007C02275")
+                .setBreed("Scottish Fold (Straight)")
+                .setColor("Tabby/White")
+                .setName("MARU")
+                .setAge(12)
+                .setHealthIssues("health check on Feb 5")
+                .setIsAdoptionReady(false)
+                .setHasNewOwner(false)
                 .build();
 
         Cat c2 = new Cat.Builder()
-                .setbId(20012901)
-                .setbColor("Red")
-                .setbName("TOSYA")
-                .setbAge(8)
-                .setbHealthIssues("kidneys (minor), pancreas (minor)")
-                .setbIsAdoptionReady(false)
-                .setbHasNewOwner(true)
+                .setId(20012901)
+                .setColor("Red")
+                .setName("TOSYA")
+                .setAge(8)
+                .setHealthIssues("kidneys (minor), pancreas (minor)")
+                .setIsAdoptionReady(false)
+                .setHasNewOwner(true)
                 .build();
 
         Cat c3 = new Cat.Builder()
-                .setbId(20012902)
-                .setbTagCode("NYC2017C13477")
-                .setbBreed("Golden British Shorthair")
-                .setbColor("Red")
-                .setbName("PISCO")
-                .setbAge(3)
-                .setbHealthIssues("no issues, checked Jan 3")
-                .setbIsAdoptionReady(true)
-                .setbHasNewOwner(false)
+                .setId(20012902)
+                .setTagCode("NYC2017C13477")
+                .setBreed("Golden British Shorthair")
+                .setColor("Red")
+                .setName("PISCO")
+                .setAge(3)
+                .setHealthIssues("no issues, checked Jan 3")
+                .setIsAdoptionReady(true)
+                .setHasNewOwner(false)
                 .build();
 
         CatBox box = new CatBox();

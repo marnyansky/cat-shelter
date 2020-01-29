@@ -2,15 +2,34 @@ package cat.shelter;
 
 import java.util.Date;
 
+/**
+ * Validates Cat instances through Cat ID, Cat tag code and Cat color fields validation
+ */
 public class CatValidator {
-
+    /**
+     * CatValidator "message" field - creates custom message (displayed on console by MeowException instance)
+     * if Cat ID, Cat tag code or/and Cat color do not match special criteria {@link CatValidator#CatValidator}
+     */
     private StringBuilder message;
 
+    /**
+     * predefined sub-messages for instantiating "message" field {@link CatValidator#message} if needed
+     */
     private final String ID_ERR = "\n" + "Error! ID should be unique 8-digit number in format: "
-            + "[CurrentDate YYMMDD][CatID]. Example: 20012901" + "\n";
+            + "[CurrentDate:YYMMDD][CAT_ID]. Example: 20012901" + "\n";
     private final String DETAILS_ERR = "\n" + "Error! Tag code and/or color fields are too short. "
             + "Remember: description ALWAYS should be detailed" + "\n";
 
+    /**
+     * Constructor with internal validator of Cat ID, Cat tag code and Cat color fields
+     *
+     * @param id      - internal (shelter) ID of a cat, syntax: [YYMMDD][ID]
+     * @param tagCode - code/ID from cat's microchip implant (IC), retrieved by using RFID device
+     * @param color   - cat color
+     * @throws MeowException - thrown if Cat ID, Cat tag code or/and Cat color
+     *                       do not match special criteria
+     * @see CatValidator#CatValidator
+     */
     public CatValidator(int id, String tagCode, String color) throws MeowException {
         message = new StringBuilder();
         checkId(id);
@@ -24,6 +43,10 @@ public class CatValidator {
         }
     }
 
+    /**
+     * private Method aimed to validate Cat ID by comparing its 6 of 8 digits to system date in format "YYMMDD"
+     * @param id - internal (shelter) ID of a cat, syntax: [YYMMDD][ID]
+     */
     private void checkId(int id) {
         int numberOfDigits = (int) Math.log10(id) + 1;
         if (numberOfDigits != 8) {
