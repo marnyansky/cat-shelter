@@ -8,7 +8,6 @@ public class CatDemo {
     /**
      * Method main() in runtime creates three instances of Cat using Cat.Builder, displays them on console
      *
-     * @param args - String[] array which can be used as argument for main()
      * @throws MeowException - thrown if Cat ID, Cat tag code or/and Cat color
      *                       do not match special criteria {@link CatValidator#CatValidator}
      */

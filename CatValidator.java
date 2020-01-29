@@ -25,10 +25,8 @@ public class CatValidator {
      *
      * @param id      - internal (shelter) ID of a cat, syntax: [YYMMDD][ID]
      * @param tagCode - code/ID from cat's microchip implant (IC), retrieved by using RFID device
-     * @param color   - cat color
      * @throws MeowException - thrown if Cat ID, Cat tag code or/and Cat color
      *                       do not match special criteria
-     * @see CatValidator#CatValidator
      */
     public CatValidator(int id, String tagCode, String color) throws MeowException {
         message = new StringBuilder();
@@ -38,14 +36,16 @@ public class CatValidator {
             message.append(DETAILS_ERR);
         }
 
-        if (!message.toString().isEmpty()) {
+        if (!(message.length() == 0)) {
             throw new MeowException(message.toString());
         }
     }
 
     /**
-     * private Method aimed to validate Cat ID by comparing its 6 of 8 digits to system date in format "YYMMDD"
-     * @param id - internal (shelter) ID of a cat, syntax: [YYMMDD][ID]
+     * private Method aimed to validate Cat ID
+     * (by comparing its first 6 of total 8 digits to system date in format "YYMMDD")
+     *
+     * @param id - shelter's internal ID of a cat, syntax: [YYMMDD][ID]
      */
     private void checkId(int id) {
         int numberOfDigits = (int) Math.log10(id) + 1;

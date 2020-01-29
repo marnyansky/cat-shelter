@@ -6,30 +6,25 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
- * Allows not to show explicitly the way storing Cat instances data (by using custom Iterator)
+ * Allows not to show explicitly the way Cat instances data is stored (by using custom Iterator)
  */
 public class CatBox implements Iterable<Cat> {
 
     /**
-     * CatBox fields:
      * arr - array of Cat instances
      * count - current number of valid Cat instances
      */
     private Cat[] arr;
     private int count;
 
-    /**
-     * Constructor that instantiates Cat[] array by setting its length to 16
-     */
     public CatBox() {
         arr = new Cat[16];
     }
 
     /**
-     * Method adds pre-validated instance of Cat to Cat[] array, null instances is not allowed by app design.
-     * Also method "extends" Cat[] array (by 2) using Arrays class CopyOf method
+     * Method adds pre-validated instance of Cat to Cat[] array, null instances is not allowed.
+     * Also method "expands" Cat[] array (by 2) using CopyOf method of class Arrays
      *
-     * @param cat - pre-validated instance of Cat
      * @throws NullPointerException - thrown in runtime if instance of Cat is null
      */
     public void add(Cat cat) {
@@ -43,9 +38,7 @@ public class CatBox implements Iterable<Cat> {
     /**
      * iterates over Cat[] array from 0 to count-1
      *
-     * @return instance of custom Iterator by Cat instances
-     * @throws NoSuchElementException - thrown in runtime
-     *                                if next() method cannot return next element of Cat[] array
+     * @return instance of custom Iterator typified by Cat
      */
     @Override
     public Iterator<Cat> iterator() {
@@ -57,6 +50,10 @@ public class CatBox implements Iterable<Cat> {
                 return elemIndx < count;
             }
 
+            /**
+             * @throws NoSuchElementException - thrown in runtime
+             *                                  if next() method cannot return next element of Cat[] array
+             */
             @Override
             public Cat next() {
                 if (!hasNext()) {
