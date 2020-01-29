@@ -1,5 +1,3 @@
-package cat.shelter;
-
 /**
  * Allows to create, save and display records of cats living or lived in a cat shelter
  *
@@ -21,15 +19,11 @@ public class Cat {
     /**
      * private constructor for creating Cat instances
      *
-     * @param id              - shelter's internal ID of a cat, syntax: [YYMMDD][ID]
-     * @param tagCode         - code/ID from cat's microchip implant (IC) retrieved by using RFID device
-     * @param breed
-     * @param color
-     * @param name            - cat name given by previous owner or shelter worker
-     * @param age             - actual or approximate cat age
-     * @param healthIssues    - cat's health issues, if any (of date of next cat's health check)
-     * @param isAdoptionReady
-     * @param hasNewOwner
+     * @param id           - shelter's internal ID of a cat, syntax: [YYMMDD][ID]
+     * @param tagCode      - code/ID from cat's microchip implant (IC) retrieved by using RFID device
+     * @param name         - cat name given by previous owner or shelter worker
+     * @param age          - actual or approximate cat age
+     * @param healthIssues - cat's health issues, if any (of date of next cat's health check)
      * @throws MeowException - thrown if Cat ID, Cat tag code or/and Cat color
      *                       do not match special criteria {@link CatValidator#CatValidator}
      */
@@ -75,7 +69,8 @@ public class Cat {
         private boolean bHasNewOwner = false;
 
         /**
-         * Set of setters, each method returns link to the current instance of Cat.Builder
+         * Set of fields setters
+         * @return link to the current instance of Cat.Builder
          */
         public Builder setId(int id) {
             this.bId = id;

@@ -1,5 +1,3 @@
-package cat.shelter;
-
 /**
  * Application demo
  */

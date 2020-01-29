@@ -1,5 +1,3 @@
-package cat.shelter;
-
 /**
  * Allows to throw custom exception
  */

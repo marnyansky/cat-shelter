@@ -1,5 +1,3 @@
-package cat.shelter;
-
 import java.util.Date;
 
 /**
