@@ -12,7 +12,8 @@ public class CatDemo {
     public static void main(String[] args) throws MeowException {
 
         Cat c1 = new Cat.Builder()
-                .setId(20012900)
+                // TODO use LocalDate class while building id. It is user-friendly.
+                .setId(20030800)
                 .setTagCode("TKY2007C02275")
                 .setBreed("Scottish Fold (Straight)")
                 .setColor("Tabby/White")
@@ -24,7 +25,7 @@ public class CatDemo {
                 .build();
 
         Cat c2 = new Cat.Builder()
-                .setId(20012901)
+                .setId(20030801)
                 .setColor("Red")
                 .setName("TOSYA")
                 .setAge(8)
@@ -34,13 +35,13 @@ public class CatDemo {
                 .build();
 
         Cat c3 = new Cat.Builder()
-                .setId(20012902)
+                .setId(20030802)
                 .setTagCode("NYC2017C13477")
                 .setBreed("Golden British Shorthair")
                 .setColor("Red")
                 .setName("PISCO")
                 .setAge(3)
-                .setHealthIssues("no issues, checked Jan 3")
+                .setHealthIssues("no issues, checked Mar 8")
                 .setIsAdoptionReady(true)
                 .setHasNewOwner(false)
                 .build();
