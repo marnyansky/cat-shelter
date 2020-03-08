@@ -1,5 +1,5 @@
 # cat-shelter
-Allows to keep records of cats in a cat shelter.
-Basic app w/o web-interface.
+Allows to track inhabitants of cat shelter.<br>
+Basic app w/o web interface.
 
 <i>by Aryeh Marnyansky</i>
