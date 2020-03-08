@@ -1,6 +1,5 @@
 # cat-shelter
 Allows to keep records of cats in a cat shelter.
-
-Java => Builder, validator class, Iterator, Exception (all custom)
+Basic app w/o web-interface.
 
 <i>by Aryeh Marnyansky</i>
